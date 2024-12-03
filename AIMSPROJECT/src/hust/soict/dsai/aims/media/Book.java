@@ -27,4 +27,9 @@ public void removeAuthor(String authorName) {
     authors.remove(authorName);
 }
 
+@Override
+public String toString() {
+    return "Book id=" + id + ", title=" + title + ", category=" + category + ", authors=" + authors + ", cost=" + cost;
+}
+
 }
