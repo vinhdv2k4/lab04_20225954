@@ -1,29 +1,30 @@
 package hust.soict.dsai.aims.store;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import java.util.ArrayList;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 
 
 public class Store {
-    private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[100]; 
-
+    private static final int MAX_STORED_MEDIA = 20;     
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
     public void addDVD(DigitalVideoDisc disc) {
-        for (int i = 0; i < itemsInStore.length; i++) {
-            if (itemsInStore[i] == null) {
-                itemsInStore[i] = disc;
+            if (itemsInStore.size() < MAX_STORED_MEDIA) {
+                itemsInStore.add(disc);
                 System.out.println("DVD has been added to the store.");
-                return;
+        
             }
-        }
+        else{
         System.out.println("The store is full, cannot add more DVDs.");
     }
-
+}
     public void removeDVD(DigitalVideoDisc disc) {
-        for (int i = 0; i < itemsInStore.length; i++) {
-            if (itemsInStore[i] == disc) {
-                itemsInStore[i] = null;
-                System.out.println("DVD has been removed from the store.");
-                return;
+            if (itemsInStore.contains(disc)) {
+                itemsInStore.remove(disc);
+                System.out.println("DVD has been removed from the store."); 
             }
-        }
-        System.out.println("DVD not found in the store.");
-    }
+            else{
+                System.out.println("DVD not found in the store ");
+            }
+        
 } 
+}
