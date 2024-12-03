@@ -24,5 +24,15 @@ public class Track implements playAble{
         System.out.println("Play Track "+ getTitle());
         System.out.println("Track Lenght " +getLength());
     }
-
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) return true;
+            if(!(obj instanceof Track)) return false;
+            Track other = (Track) obj;
+            return this.title != null && this.title.equals(other.title) && this.length == other.length;
+        }
+        @Override
+        public int hashCode() {
+            return java.util.Objects.hash(title, length);
+        }
 }

@@ -36,5 +36,21 @@ public abstract class Media {
         this.cost = cost;
     }
     
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(!(obj instanceof Media)) return false;
+        Media ohter = (Media) obj;
+        return  this.title != null && this.title .equals(ohter.title) ;
+    }
+    @Override
+    public int hashCode() {
+        return this.title != null ? this.title.hashCode() : 0;
+    }
+    @Override
+    public String toString() {
+        return "Media [id=" + id + ", title=" + title + ", category=" + category + ", cost=" + cost + "]";
+    }
+    
 
 }

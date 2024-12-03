@@ -52,4 +52,10 @@ public class CompactDisc extends Disc implements playAble {
             track.play();
         }
     }
+    @Override
+    public String toString() {
+        return "CompactDisc id=" + id + ", length=" + length + ", title=" + title + ", director=" + director
+                + ", category=" + category + ", artist=" + artist + ", cost=" + cost + ", tracks=" + tracks ;
+    }
+    
 }
