@@ -1,5 +1,5 @@
 package hust.soict.dsai.aims.media;
-
+import java.util.Comparator;
 public abstract class Media {
     protected int id;
     protected  String title;
@@ -7,6 +7,11 @@ public abstract class Media {
     protected  float cost;
     public Media(int id, String title, String category, float cost){
         this.id = id;
+        this.title = title;
+        this.category = category;
+        this.cost= cost;
+    }
+    public Media(String title, String category, float cost){
         this.title = title;
         this.category = category;
         this.cost= cost;
@@ -44,13 +49,19 @@ public abstract class Media {
         return  this.title != null && this.title .equals(ohter.title) ;
     }
     @Override
-    public int hashCode() {
-        return this.title != null ? this.title.hashCode() : 0;
-    }
+public int hashCode() {
+    int result = (title != null ? title.hashCode() : 0);
+    result = 31 * result + id;
+    return result;
+}
+
     @Override
     public String toString() {
         return "Media [id=" + id + ", title=" + title + ", category=" + category + ", cost=" + cost + "]";
     }
-    
+   
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST= new MediaTitleComparatorByTiltleCost();
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaTitleComparatorByCostTitle();
+
 
 }

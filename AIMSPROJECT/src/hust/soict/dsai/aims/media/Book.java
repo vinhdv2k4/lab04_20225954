@@ -10,6 +10,9 @@ public Book(int id , String title , String cateGory , float cost , List<String> 
   super(id, title, cateGory, cost);
   this.authors =authors;
 }
+public Book(String title , String cateGory , float cost ){
+    super(title, cateGory, cost);
+}
 
 public List<String> getAuthors() {
     return authors;

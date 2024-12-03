@@ -19,5 +19,24 @@ public class Carttest {
         cart.searchByTitle("Star Wars");
         cart.searchByTitle("King");
         cart.searchByTitle("Wonder");
-    }
-}
+                
+        cart.addMedia(new CompactDisc(1, "Book", "Fiction", 15.0f, "Artist1", 50));
+        cart.addMedia(new CompactDisc(2, "CD", "Music", 10.0f, "Artist2", 30));
+        cart.addMedia(new CompactDisc(3, "DVD", "Movies", 20.0f, "Artist3", 120));
+        cart.addMedia(new CompactDisc(4, "Book", "Fiction", 20.0f, "Artist4", 70));
+        
+                // Sắp xếp theo tiêu đề rồi giá
+                System.out.println("Sắp xếp theo tiêu đề rồi giá:");
+                cart.sortByTitleCost();
+                cart.printCart();
+        
+                // Sắp xếp theo giá rồi tiêu đề
+                System.out.println("\nSắp xếp theo giá rồi tiêu đề:");
+                cart.sortByCostTitle();
+                cart.printCart();
+           
+        
+            }
+        }
+        
+    

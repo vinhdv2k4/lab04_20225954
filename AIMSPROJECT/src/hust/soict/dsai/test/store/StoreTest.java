@@ -8,9 +8,9 @@ public class StoreTest {
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("Movie 1", "Action", 20.0f);
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Movie 2", "Comedy", "John", 15.7f);
 
-        store.addDVD(dvd1); 
-        store.addDVD(dvd2); 
-        store.removeDVD(dvd1); 
-        store.removeDVD(dvd2); 
+        store.addMedia(dvd1); 
+        store.addMedia(dvd2); 
+        store.removeMedia(dvd1); 
+        store.removeMedia(dvd2); 
     }
 } 

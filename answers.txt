@@ -1,0 +1,21 @@
+Question: Which class should implement the Comparable interface?
+
+Trả lời:
+Lớp Media nên triển khai giao diện Comparable.
+
+Question: How should the compareTo() method be implemented in these classes to reflect the desired ordering?
+
+Trả lời:
+Bạn có thể tìm thấy chi tiết triển khai trong tệp Media.java.
+
+Question: Is it possible to have two different ordering rules for the items (e.g., by title then cost, and by cost then title) using the Comparable interface approach?
+
+Trả lời:
+Không, điều này không khả thi. Giao diện Comparable chỉ hỗ trợ một thứ tự tự nhiên duy nhất cho các đối tượng.
+
+Question: If DVDs have a different ordering rule from other media types, such as by title, then by decreasing length, then by cost, how would you modify your code to accommodate this?
+
+Trả lời:
+Bạn có thể ghi đè phương thức compareTo trong lớp Disc để triển khai quy tắc sắp xếp mới.
+
+Mã đã sửa đổi có thể được tìm thấy trong tệp Disc.java.
